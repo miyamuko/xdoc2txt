@@ -1,0 +1,1 @@
+(require "xdoc2txt")
