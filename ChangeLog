@@ -1,3 +1,7 @@
+2006-03-23  MIYAMUKO Katsuyuki
+
+	* (*xdoc2txt-options*): -n オプションをデフォルトで追加。
+
 2006-03-13  MIYAMUKO Katsuyuki
 
 	* xdoc2txt 0.8 リリース

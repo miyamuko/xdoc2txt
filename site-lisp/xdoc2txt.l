@@ -71,10 +71,10 @@ pdf, word, excel などの各種バイナリ文書からテキストを抽出して表示します。
         ;;   -c:   PDF キャッシュ on
         ;;   -o=0: PDF で -- ? -- の形式のページ番号を表示しない
         ;; http://www31.ocn.ne.jp/~h_ishida/xdoc2txt.html
-        (setf *xdoc2txt-options* "-c -o=0")
+        (push "-c -o=0" *xdoc2txt-options*)
 
         ;; リスト形式でも可
-        ; (setf *xdoc2txt-options* '("-c" "-o=0"))
+        ; (push '("-c" "-o=0") *xdoc2txt-options*)
 
 --- *xdoc2txt-suffix*
     xdoc2txt で開くファイルの拡張子 (regexp) のリストです。
@@ -204,7 +204,7 @@ xdoc2txt は修正 BSD ライセンスに基づいて利用可能です。
 (defvar *xdoc2txt-command* "xdoc2txt"
   "xdoc2txt.exe へのパス")
 
-(defvar *xdoc2txt-options* nil
+(defvar *xdoc2txt-options* '("-n")
   "xdoc2txt.exe に渡すオプションのリスト")
 
 (defvar *xdoc2txt-suffix*
@@ -245,9 +245,15 @@ set-buffer-fold-width の引数に指定します。
 (defun xdoc2txt-command ()
   (map-slash-to-backslash *xdoc2txt-command*))
 
+(defun xdoc2txt-flatten (tree)
+  (if (atom tree)
+      (list tree)
+    (nconc (xdoc2txt-flatten (car tree))
+           (if (cdr tree) (xdoc2txt-flatten (cdr tree))))))
+
 (defun xdoc2txt-options ()
   (if (listp *xdoc2txt-options*)
-      *xdoc2txt-options*
+      (xdoc2txt-flatten *xdoc2txt-options*)
     (list *xdoc2txt-options*)))
 
 (defun xdoc2txt-file-regexp ()
