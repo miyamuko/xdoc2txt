@@ -1,110 +1,110 @@
 2006-03-23  MIYAMUKO Katsuyuki
 
-	* (*xdoc2txt-options*): -n �I�v�V�������f�t�H���g�Œǉ��B
+	* (*xdoc2txt-options*): -n オプションをデフォルトで追加。
 
 2006-03-13  MIYAMUKO Katsuyuki
 
-	* xdoc2txt 0.8 �����[�X
+	* xdoc2txt 0.8 リリース
 
 2006-03-02  MIYAMUKO Katsuyuki
 
-	* (xdoc2txt): �ꎞ�t�@�C�����폜����悤�ɂ����B
-	(Thanks xyzzy wiki / patch11 �� OMA ����)
+	* (xdoc2txt): 一時ファイルを削除するようにした。
+	(Thanks xyzzy wiki / patch11 の OMA さん)
 
-	* (xdoc2txt, xdoc2txt-with-temporary-writable): *xdoc2txt-hook* ��
-	view-mode �ɂ����ꍇ�ȂǁAread-only �ŃG���[�ɂȂ�����C���B
+	* (xdoc2txt, xdoc2txt-with-temporary-writable): *xdoc2txt-hook* で
+	view-mode にした場合など、read-only でエラーになる問題を修正。
 
-	* (xdoc2txt): *grep* �o�b�t�@�̏ꍇ�ł��A*xdoc2txt-hook* �͎��s����
-	�悤�ɂ��� (set-default-directory �͂��Ȃ��܂�)�B
+	* (xdoc2txt): *grep* バッファの場合でも、*xdoc2txt-hook* は実行する
+	ようにした (set-default-directory はしないまま)。
 
 2005-08-30  MIYAMUKO Katsuyuki
 
-	* (xdoc2txt): *grep* �o�b�t�@�� set-default-directory ���Ȃ��悤��
-	�����B
+	* (xdoc2txt): *grep* バッファに set-default-directory しないように
+	した。
 
 2005-07-10  MIYAMUKO Katsuyuki
 
-	* xdoc2txt 0.6 �����[�X�B
+	* xdoc2txt 0.6 リリース。
 
-	* (xdoc2txt): execute-shell-command ���̂Ă� call-process ��
-	�g���悤�ɂ����B
+	* (xdoc2txt): execute-shell-command を捨てて call-process を
+	使うようにした。
 
-	* (xdoc2txt-commandline, *xdoc2txt-command*): �I�v�V�������ŃR�}
-	���h���w�肵���ꍇ�ɃG���[�ɂȂ�̂��C���B
+	* (xdoc2txt-commandline, *xdoc2txt-command*): オプションつきでコマ
+	ンドを指定した場合にエラーになるのを修正。
 
-	* *xdoc2txt-options*: xdoc2txt �ɂ킽���I�v�V�������w�肷��ϐ��B
+	* *xdoc2txt-options*: xdoc2txt にわたすオプションを指定する変数。
 
-	* �h�L�������g�̃^�C�|���C���B
+	* ドキュメントのタイポを修正。
 
 2005-05-10  MIYAMUKO Katsuyuki
 
-	* xdoc2txt: �o�b�t�@�̃f�B���N�g������� default-directory �ɂȂ���
-	�����̂��C���B�J�����t�@�C���Ɠ����f�B���N�g���ɂ����B
+	* xdoc2txt: バッファのディレクトリが常に default-directory になって
+	いたのを修正。開いたファイルと同じディレクトリにした。
 
 2005-01-19  MIYAMUKO Katsuyuki
 
-	* xdoc2txt-delete-trailing-spaces-hook: �s���̗]�v�ȋ󔒂��폜����
-	�悤�ɂ����B
+	* xdoc2txt-delete-trailing-spaces-hook: 行末の余計な空白を削除する
+	ようにした。
 
-	* xdoc2txt-fix-cr-hook, xdoc2txt-fix-vt-hook: ���ݑ|���p�̏�����
-	�t�b�N�ɂ����B
+	* xdoc2txt-fix-cr-hook, xdoc2txt-fix-vt-hook: ごみ掃除用の処理を
+	フックにした。
 
 2004-12-06  MIYAMUKO Katsuyuki
 
-	* xdoc2txt 0.5 �����[�X�B
+	* xdoc2txt 0.5 リリース。
 
-	* xdoc2txt-*-scan-files-1: xdoc2txt �Ɗ֌W�Ȃ��t�@�C���܂ŏ�������
-	�����̂��C���Borz
+	* xdoc2txt-*-scan-files-1: xdoc2txt と関係ないファイルまで処理して
+	いたのを修正。orz
 
-	* xdoc2txt-find-file: grep ���ʂ���T�u�f�B���N�g���̃t�@�C�����J��
-	�Ȃ����������C���B
+	* xdoc2txt-find-file: grep 結果からサブディレクトリのファイルを開け
+	なかった問題を修正。
 
-	* xdoc2txt: ^M �����s�ɁA^K �����s x 6 �ɕϊ�����悤�ɂ����B
+	* xdoc2txt: ^M を改行に、^K を改行 x 6 に変換するようにした。
 
 2004-12-05  MIYAMUKO Katsuyuki
 
-	* xdoc2txt 0.4 �����[�X�B
+	* xdoc2txt 0.4 リリース。
 
-	* xdoc2txt: pop-to-buffer ���Ȃ��悤�ɂ����B
+	* xdoc2txt: pop-to-buffer しないようにした。
 
-	* *xdoc2txt-hook*: �t�b�N��ǉ������B
+	* *xdoc2txt-hook*: フックを追加した。
 
-	* xdoc2txt-encap-scan-files-1: ���� encap ���Ă����ꍇ�������Ȃ���
-	���ɂ����B
+	* xdoc2txt-encap-scan-files-1: 既に encap していた場合何もしないよ
+	うにした。
 
-	* xdoc2txt-scan-files-1, xdoc2txt-ggrep-scan-files-1: grep ���ʂ�
-	��Ƀt���p�X�ŕ\�����������C���B
+	* xdoc2txt-scan-files-1, xdoc2txt-ggrep-scan-files-1: grep 結果が
+	常にフルパスで表示される問題を修正。
 
-	* xdoc2txt 0.3.1 �����[�X�B
+	* xdoc2txt 0.3.1 リリース。
 
-	* xdoc2txt-shadow-scan-files-1: ggrep.l ������� require ����
-	�悤�ɂ����B
+	* xdoc2txt-shadow-scan-files-1: ggrep.l を内部で require する
+	ようにした。
 
 2004-12-03  MIYAMUKO Katsuyuki
 
-	* xdoc2txt 0.3 �����[�X.
+	* xdoc2txt 0.3 リリース.
 
-	* *xdoc2txt-fold-width*: �e�L�X�g�̐܂�Ԃ����w��ł���悤�ɂ����B
+	* *xdoc2txt-fold-width*: テキストの折り返しを指定できるようにした。
 
-	* xdoc2txt-commandline: xdoc2txt �R�}���h���󔒂��܂ރp�X�ł�
-	�����悤�ɂ����B
+	* xdoc2txt-commandline: xdoc2txt コマンドが空白を含むパスでも
+	動くようにした。
 
-	* xdoc2txt-shadow-scan-files-1: grepd �����[�h����Ă��Ȃ��ꍇ
-	encapsulate �Œu��������Ă��Ȃ������̂� require ����悤�ɂ����B
-	(Thanks xyzzy�̎g������������ʂ₵ ��܂����� ����5 �� 858 ����)
+	* xdoc2txt-shadow-scan-files-1: grepd がロードされていない場合
+	encapsulate で置き換わっていなかったので require するようにした。
+	(Thanks xyzzyの使い方が分からぬやし 励ましあえ その5 の 858 さん)
 
-	* xdoc2txt: execute-shell-command �̈����� Key �ł͂Ȃ�
-	optional�B���܂Ŋ�ՓI�ɓ����Ă��� (w
-	(Thanks xyzzy�̎g������������ʂ₵ ��܂����� ����5 �� 863 ����)
+	* xdoc2txt: execute-shell-command の引数は Key ではなく
+	optional。今まで奇跡的に動いていた (w
+	(Thanks xyzzyの使い方が分からぬやし 励ましあえ その5 の 863 さん)
 
-	* xdoc2txt-find-file, xdoc2txt-scan-files-1: �T�u�f�B���N�g���̃t�@
-	�C���𐳂��������ł��Ȃ������̂��C���B
-	(Thanks xyzzy�̎g������������ʂ₵ ��܂����� ����5 �� 878 ����)
+	* xdoc2txt-find-file, xdoc2txt-scan-files-1: サブディレクトリのファ
+	イルを正しく検索できなかったのを修正。
+	(Thanks xyzzyの使い方が分からぬやし 励ましあえ その5 の 878 さん)
 
 2004-09-18  MIYAMUKO Katsuyuki
 
-	* grep-dialog �ɑΉ� (encap.l ���K�v)
+	* grep-dialog に対応 (encap.l が必要)
 
 2004-08-09  MIYAMUKO Katsuyuki
 
-	* ���������[�X
+	* 初期リリース
