@@ -278,7 +278,7 @@ set-buffer-fold-width ‚Ìˆø”‚Éw’è‚µ‚Ü‚·B
       (erase-buffer output)
       (insert-file-contents tmpfile t))
     (delete-file tmpfile)
-    (xdoc2txt-setup-buffer filename (directory-namestring filename) temporary-p)))
+    (xdoc2txt-setup-buffer filename (directory-namestring fullpath) temporary-p)))
 
 (defun xdoc2txt-setup-buffer (filename defdir temporary-p)
   (xdoc2txt-with-selected-buffer

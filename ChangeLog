@@ -1,3 +1,8 @@
+2012-02-24  MIYAMUKO Katsuyuki
+
+	* grep バッファでサブディレクトリのファイルを F10 (first-error) などで
+	開けなかった問題を修正
+
 2006-03-13  MIYAMUKO Katsuyuki
 
 	* xdoc2txt 0.8 リリース
